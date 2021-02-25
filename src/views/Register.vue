@@ -2,24 +2,24 @@
   <div class="register">
         <form>
             <div class="mb-3">
-                <label for="exampleInputFirstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="firstNameHelp">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" aria-describedby="firstName">
             </div>
             <div class="mb-3">
-                <label for="exampleInputLastName" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="exampleInputLastName" aria-describedby="lastNameHelp">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" aria-describedby="lastName">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="email">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Confirm password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="confirmPassword" class="form-label">Confirm password</label>
+                <input type="password" class="form-control" id="confirmPassword">
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="mx-auto" id="exampleCheck1">

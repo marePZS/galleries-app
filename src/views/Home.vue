@@ -1,16 +1,20 @@
 <template>
   <div class="home"> <!-- primer izgleda jedne galerije -->
+    
     <ul>
-      <li>
-        <div class="card" style="width: 18rem;">
-          <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/671589/2017-10best-cars-the-best-cars-for-sale-in-america-today-feature-car-and-driver-photo-672522-s-original.jpg?resize=768:*" class="card-img-top" alt="...">
-          <div class="card-body">
-          <p class="card-text">opis galerije</p>
-          <p></p>
+      <a href="https://www.google.com">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/671589/2017-10best-cars-the-best-cars-for-sale-in-america-today-feature-car-and-driver-photo-672522-s-original.jpg?resize=768:*" class="card-img-top" alt="...">
+            <div class="card-body">
+            <p class="card-text">opis galerije</p>
+            <p></p>
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
+      </a>
     </ul>
+    
   </div>
 </template>
 
