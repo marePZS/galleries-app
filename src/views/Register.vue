@@ -22,8 +22,8 @@
                 <input type="password" class="form-control" id="confirmPassword">
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="mx-auto" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Accept Terms and Conditions</label>
+                <input type="checkbox" class="mx-auto" id="checkbox">
+                <label class="form-check-label" for="checkbox">Accept Terms and Conditions</label>
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>

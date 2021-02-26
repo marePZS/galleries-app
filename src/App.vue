@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="container">
+    <h1>Galleries</h1>
     <nav-bar />
     <router-view/>
   </div>
