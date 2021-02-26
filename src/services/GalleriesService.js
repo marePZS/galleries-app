@@ -18,7 +18,7 @@ class GalleriesService extends BaseService {
 
     async updateGallery(id, gallery){
         const {data} = await this.http.put(`/edit-gallery/${id}`, gallery);
-        return
+        return data;
     }
 
     async deleteGallery(id){

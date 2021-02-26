@@ -11,19 +11,19 @@
                 <router-link class="nav-link active" to="/">All Galleries</router-link>
                 </li>
                 <li class="nav-item">
-                <router-link class="nav-link active" to="/mygalleries">My Galleries</router-link>
+                <router-link  class="nav-link active" to="/mygalleries">My Galleries</router-link>
                 </li>
                 <li class="nav-item">
-                <router-link class="nav-link active" to="/create">Create Gallery</router-link>
+                <router-link  class="nav-link active" to="/create">Create Gallery</router-link>
                 </li>
                 <li>
-                <router-link class="nav-link active" to="/register">Register</router-link>
+                <router-link v-if="!isAuthenticated" class="nav-link active" to="/register">Register</router-link>
                 </li>
                 <li class="nav-item">
-                <router-link class="nav-link active" to="/login">Login</router-link>
+                <router-link v-if="!isAuthenticated" class="nav-link active" to="/login">Login</router-link>
                 </li>
                 <li class="nav-item">
-                <router-link class="nav-link active" to="">Logout</router-link>
+                <a  class="nav-link active" @click="logout">Logout</a>
                 </li>
             </ul>
             <div >
@@ -40,15 +40,23 @@
 
 <script>
 
+import { mapActions, mapGetters, mapMutations } from 'vuex';
+
 export default {
-    name: 'navbar',
-    components:
-    {
-        
+  name: 'navbar',
+  computed: {
+    ...mapGetters('auth', ['isAuthenticated']),
+  },
+  methods: {
+    search(evt) {
+      this.setSearchTerm(evt.target.value);
+      this.getMovies();
     },
-    
-    
-}
+    ...mapActions('galleries', ['getAllGalleries']),
+    ...mapMutations('galleries', ['setSearchTerm']),
+    ...mapActions('auth', ['logout']),
+  },
+};
 </script>
 
 <style>
