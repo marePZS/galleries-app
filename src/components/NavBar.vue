@@ -11,10 +11,10 @@
                 <router-link class="nav-link active" to="/">All Galleries</router-link>
                 </li>
                 <li class="nav-item">
-                <router-link  class="nav-link active" to="/mygalleries">My Galleries</router-link>
+                <router-link v-if="isAuthenticated" class="nav-link active" to="/mygalleries">My Galleries</router-link>
                 </li>
                 <li class="nav-item">
-                <router-link  class="nav-link active" to="/create">Create Gallery</router-link>
+                <router-link v-if="isAuthenticated" class="nav-link active" to="/create">Create Gallery</router-link>
                 </li>
                 <li>
                 <router-link v-if="!isAuthenticated" class="nav-link active" to="/register">Register</router-link>
@@ -23,15 +23,17 @@
                 <router-link v-if="!isAuthenticated" class="nav-link active" to="/login">Login</router-link>
                 </li>
                 <li class="nav-item">
-                <a  class="nav-link active" @click="logout">Logout</a>
+                <button id="logout" v-if="isAuthenticated" class="nav-link active" @click="logout">Logout</button>
                 </li>
             </ul>
-            <div >
-                <router-link class="nav-link" to="/user">User</router-link>
-            </div>
+            <!-- <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <router-link v-if="isAuthenticated" class="nav-link active" to="/user">{{activeUser.first_name}} {{activeUser.last_name}}</router-link>
+              </li>
+            </ul> -->
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input @input="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button  class="btn btn-outline-success" type="submit">Search</button>
             </form>
             </div>
         </div>
@@ -42,25 +44,33 @@
 
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 
+
 export default {
   name: 'navbar',
   computed: {
-    ...mapGetters('auth', ['isAuthenticated']),
+    ...mapGetters('auth',['isAuthenticated','activeUser']),
+
   },
   methods: {
     search(evt) {
       this.setSearchTerm(evt.target.value);
-      this.getMovies();
+      this.getAllGalleries();
     },
     ...mapActions('galleries', ['getAllGalleries']),
     ...mapMutations('galleries', ['setSearchTerm']),
-    ...mapActions('auth', ['logout']),
+    ...mapActions('auth', ['logout', 'getActiveUser']),
   },
+
+
 };
 </script>
 
 <style>
-
+#logout{
+  border: none;
+  background-color: transparent;
+  color: none;
+}
 
 
 </style>

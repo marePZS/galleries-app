@@ -21,11 +21,12 @@
                 <label for="confirmPassword" class="form-label">Confirm password</label>
                 <input v-model="userData.confirm_password" type="password" class="form-control" id="confirmPassword">
             </div>
+            
             <div class="mb-3 form-check">
                 <input v-model="userData.terms" type="checkbox" class="mx-auto" id="checkbox">
                 <label class="form-check-label" for="checkbox">Accept Terms and Conditions</label>
             </div>
-            <p v-if="registerFailed">Registration Failed, check credentials</p>
+            
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
   </div>
@@ -53,7 +54,7 @@ export default {
 
     methods: {
     async onSubmit() {
-        this.registerFailed = false;
+        
         try {
             await this.register(this.userData);
             this.$router.push('/');
@@ -69,5 +70,7 @@ export default {
 </script>
 
 <style>
-
+.error{
+    color: red;
+}
 </style>
